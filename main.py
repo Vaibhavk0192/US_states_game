@@ -17,6 +17,8 @@ guessed_answer=[]
 while len(guessed_answer)<50:
 
     answer=t.textinput(f"{len(guessed_answer)}/50 States Correct","What is another state's name?").title()
+    if answer=="Exit":
+        break
     if answer in all__states:
         if answer not in guessed_answer:
             tim=t.Turtle()
@@ -26,8 +28,6 @@ while len(guessed_answer)<50:
             tim.goto(int(state_data.x),int(state_data.y))
             tim.write(answer)
             guessed_answer.append(answer)
-    else:
-        pass
         
 
 t.mainloop()
